@@ -275,6 +275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: 5
+  tiro: {fileID: 8380148005386302431, guid: db53e3ee8fe3f8c4896f727393eff66c, type: 3}
 --- !u!1 &1584798683
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,8 +347,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1280163151
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 393229655, guid: 95cc49b5326647447a0f1f6e1b87c353, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -380,60 +381,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1001 &7941855728198465534
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 248069305894631681, guid: db53e3ee8fe3f8c4896f727393eff66c, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 248069305894631681, guid: db53e3ee8fe3f8c4896f727393eff66c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 248069305894631681, guid: db53e3ee8fe3f8c4896f727393eff66c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 248069305894631681, guid: db53e3ee8fe3f8c4896f727393eff66c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 248069305894631681, guid: db53e3ee8fe3f8c4896f727393eff66c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 248069305894631681, guid: db53e3ee8fe3f8c4896f727393eff66c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 248069305894631681, guid: db53e3ee8fe3f8c4896f727393eff66c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 248069305894631681, guid: db53e3ee8fe3f8c4896f727393eff66c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 248069305894631681, guid: db53e3ee8fe3f8c4896f727393eff66c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 248069305894631681, guid: db53e3ee8fe3f8c4896f727393eff66c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 248069305894631681, guid: db53e3ee8fe3f8c4896f727393eff66c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8380148005386302431, guid: db53e3ee8fe3f8c4896f727393eff66c, type: 3}
-      propertyPath: m_Name
-      value: TiroPlayer
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: db53e3ee8fe3f8c4896f727393eff66c, type: 3}

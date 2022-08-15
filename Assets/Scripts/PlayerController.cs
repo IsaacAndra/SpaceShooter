@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
-    [SerializeField] float velocity = 20f;
-
+    [SerializeField] private float velocity = 20f;
+    [SerializeField] private GameObject tiro;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +18,11 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         MoveBehavior();
+
+        if(Input.GetButtonDown("Fire1"))
+        {
+            Instantiate(tiro, transform.position, transform.rotation);
+        }
     }
 
     private void MoveBehavior()
