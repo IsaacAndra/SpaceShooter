@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     {
         var horizontal = Input.GetAxis("Horizontal");
         var vertical = Input.GetAxis("Vertical");
-        Vector2 myVelocity = new Vector2(horizontal, vertical);
+        var myVelocity = new Vector2(horizontal, vertical);
         myVelocity.Normalize();
         rb.velocity = myVelocity * velocity;
     }
