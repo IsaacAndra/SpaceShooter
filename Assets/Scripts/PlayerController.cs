@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform shotPosition;
     [SerializeField] private float life = 3f;
 
+    [SerializeField] private float velShot = 10f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,10 +23,17 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         MoveBehavior();
+        Shooting();
+    }
 
-        if(Input.GetButtonDown("Fire1"))
+    private void Shooting()
+    {
+        if (Input.GetButtonDown("Fire1"))
         {
-            Instantiate(tiro, shotPosition.position, transform.rotation);
+           GameObject shot = Instantiate(tiro, shotPosition.position, transform.rotation);
+
+            shot.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, velShot);
+
         }
     }
 

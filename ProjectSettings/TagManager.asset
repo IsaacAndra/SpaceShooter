@@ -4,8 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemie01
+  - Enemie
   - Player1
+  - Enemie01
   layers:
   - Default
   - TransparentFX

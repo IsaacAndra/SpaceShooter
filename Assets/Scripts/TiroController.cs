@@ -6,7 +6,6 @@ public class TiroController : MonoBehaviour
 {
 
     private Rigidbody2D rb;
-    [SerializeField] private float vel = 10f;
     [SerializeField] private GameObject impact;
 
 
@@ -16,7 +15,7 @@ public class TiroController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         //Going to the UP
-        rb.velocity = new Vector2(0f, vel);
+        //rb.velocity = new Vector2(0f, vel);
     }
  
     // Update is called once per frame
@@ -28,9 +27,9 @@ public class TiroController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if(collision.CompareTag("Enemie01"))
+        if(collision.CompareTag("Enemie"))
         {
-            collision.GetComponent<Enemy01Controller>().LostLife(1);
+            collision.GetComponent<EnemieDad>().LostLife(1);
         }
         
         if(collision.CompareTag("Player1"))

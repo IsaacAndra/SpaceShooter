@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 1379858896}
   m_Layer: 6
   m_Name: Enemy01
-  m_TagString: Enemie01
+  m_TagString: Enemie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,10 +101,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vel: -3
-  shot: {fileID: 8101397121287183884, guid: 6ec7b1303f2a77c4886e898c82355b49, type: 3}
-  explosion: {fileID: 1927940140672099586, guid: ce7aec015a65aaa48ae91fd0fa98eb34, type: 3}
-  shotPosition: {fileID: 1597263039}
   life: 1
+  explosion: {fileID: 1927940140672099586, guid: ce7aec015a65aaa48ae91fd0fa98eb34, type: 3}
+  shot: {fileID: 8101397121287183884, guid: 6ec7b1303f2a77c4886e898c82355b49, type: 3}
+  velocityShot: 6
+  shotPosition: {fileID: 1597263039}
 --- !u!70 &1379858896
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

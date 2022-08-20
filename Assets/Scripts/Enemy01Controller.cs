@@ -2,16 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy01Controller : MonoBehaviour
+public class Enemy01Controller : EnemieDad
 {
 
     private Rigidbody2D rb;
-    [SerializeField] private float vel = -3f;
-    [SerializeField] private GameObject shot;
-    [SerializeField] private GameObject explosion;
     [SerializeField] private Transform shotPosition;
-    private float delayShot = 1f;
-    [SerializeField] private float life = 1f;
+
 
 
     // Start is called before the first frame update
@@ -28,33 +24,23 @@ public class Enemy01Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+        Shooting();
+    }
+
+    private void Shooting()
+    {
         bool visible = GetComponentInChildren<SpriteRenderer>().isVisible;
 
-        if(visible)
+        if (visible)
         {
             delayShot -= Time.deltaTime;
             if (delayShot <= 0)
             {
-                Instantiate(shot, shotPosition.position, transform.rotation);
-
+                var myShot = Instantiate(shot, shotPosition.position, transform.rotation);
+                myShot.GetComponent<Rigidbody2D>().velocity = Vector2.down * velocityShot;  
                 delayShot = Random.Range(1.5f, 2f);
             }
         }
-       
     }
-
-    public void LostLife(float damage)
-    {
-        life -= damage;
-
-        if(life <= 0)
-        {
-            Destroy(gameObject);
-
-            Instantiate(explosion, transform.position, transform.rotation);
-        }
-
-    }
-
 }
