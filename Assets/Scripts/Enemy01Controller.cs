@@ -10,6 +10,7 @@ public class Enemy01Controller : MonoBehaviour
     [SerializeField] private GameObject shot;
     [SerializeField] private Transform shotPosition;
     private float delayShot = 1f;
+    [SerializeField] private float life = 1f;
 
 
     // Start is called before the first frame update
@@ -39,7 +40,12 @@ public class Enemy01Controller : MonoBehaviour
                 delayShot = Random.Range(1.5f, 2f);
             }
         }
-        
-
+       
     }
+
+    public void LostLife(float damage)
+    {
+        life -= damage;
+    }
+
 }

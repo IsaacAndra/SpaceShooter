@@ -133,6 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vel: 10
+  impact: {fileID: 4298645450666383514, guid: db46e514d45cddf49b676a1fcbca1a4d, type: 3}
 --- !u!50 &855941343
 Rigidbody2D:
   serializedVersion: 4

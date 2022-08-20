@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 1379858896}
   m_Layer: 6
   m_Name: Enemy01
-  m_TagString: Untagged
+  m_TagString: Enemie01
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,6 +103,7 @@ MonoBehaviour:
   vel: -3
   shot: {fileID: 8101397121287183884, guid: 6ec7b1303f2a77c4886e898c82355b49, type: 3}
   shotPosition: {fileID: 1597263039}
+  life: 1
 --- !u!70 &1379858896
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

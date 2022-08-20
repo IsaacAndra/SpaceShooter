@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float velocity = 20f;
     [SerializeField] private GameObject tiro;
     [SerializeField] private Transform shotPosition;
+    [SerializeField] private float life = 3f;
 
     // Start is called before the first frame update
     void Start()
@@ -34,4 +35,10 @@ public class PlayerController : MonoBehaviour
         myVelocity.Normalize();
         rb.velocity = myVelocity * velocity;
     }
+
+    public void LostLife(float damage)
+    {
+        life -= damage;
+    }
+
 }
