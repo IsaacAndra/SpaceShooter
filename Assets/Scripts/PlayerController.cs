@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     [SerializeField] private float velocity = 20f;
     [SerializeField] private GameObject tiro;
+    [SerializeField] private Transform shotPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +22,7 @@ public class PlayerController : MonoBehaviour
 
         if(Input.GetButtonDown("Fire1"))
         {
-            Instantiate(tiro, transform.position, transform.rotation);
+            Instantiate(tiro, shotPosition.position, transform.rotation);
         }
     }
 

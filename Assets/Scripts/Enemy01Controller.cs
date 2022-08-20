@@ -8,6 +8,7 @@ public class Enemy01Controller : MonoBehaviour
     private Rigidbody2D rb;
     [SerializeField] private float vel = -3f;
     [SerializeField] private GameObject shot;
+    [SerializeField] private Transform shotPosition;
     private float delayShot = 1f;
 
 
@@ -25,13 +26,20 @@ public class Enemy01Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        delayShot -= Time.deltaTime;
-        if(delayShot <= 0)
-        {
-            Instantiate(shot, transform.position, transform.rotation);
+        
+        bool visible = GetComponentInChildren<SpriteRenderer>().isVisible;
 
-            delayShot = Random.Range(1.5f, 2f);
+        if(visible)
+        {
+            delayShot -= Time.deltaTime;
+            if (delayShot <= 0)
+            {
+                Instantiate(shot, shotPosition.position, transform.rotation);
+
+                delayShot = Random.Range(1.5f, 2f);
+            }
         }
+        
 
     }
 }
