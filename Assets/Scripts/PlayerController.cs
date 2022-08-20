@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     [SerializeField] private float velocity = 20f;
     [SerializeField] private GameObject tiro;
+    [SerializeField] private GameObject explosion;
     [SerializeField] private Transform shotPosition;
     [SerializeField] private float life = 3f;
 
@@ -39,6 +40,14 @@ public class PlayerController : MonoBehaviour
     public void LostLife(float damage)
     {
         life -= damage;
+
+        if(life <= 0)
+        {
+            Destroy(gameObject);
+            Instantiate(explosion, transform.position, transform.rotation);
+
+        }
+
     }
 
 }

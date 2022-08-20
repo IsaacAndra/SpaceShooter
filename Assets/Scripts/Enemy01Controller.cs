@@ -8,6 +8,7 @@ public class Enemy01Controller : MonoBehaviour
     private Rigidbody2D rb;
     [SerializeField] private float vel = -3f;
     [SerializeField] private GameObject shot;
+    [SerializeField] private GameObject explosion;
     [SerializeField] private Transform shotPosition;
     private float delayShot = 1f;
     [SerializeField] private float life = 1f;
@@ -46,6 +47,14 @@ public class Enemy01Controller : MonoBehaviour
     public void LostLife(float damage)
     {
         life -= damage;
+
+        if(life <= 0)
+        {
+            Destroy(gameObject);
+
+            Instantiate(explosion, transform.position, transform.rotation);
+        }
+
     }
 
 }
