@@ -41,4 +41,26 @@ public class EnemieDad : MonoBehaviour
 
     }
 
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("Destroyer"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.CompareTag("Player1"))
+        {
+            Destroy(gameObject);
+
+            Instantiate(explosion, transform.position, transform.rotation);
+
+            other.gameObject.GetComponent<PlayerController>().LostLife(1);
+        }
+    }
+
+
 }

@@ -7,6 +7,8 @@ public class Enemy02Controller : EnemieDad
 
     private Rigidbody2D rb;
     [SerializeField] private Transform shotPosition;
+    [SerializeField] private float yMax = 2.5f;
+    private bool canMove = true;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,24 @@ public class Enemy02Controller : EnemieDad
     void Update()
     {
         Shooting();
+        
+        if(transform.position.y < yMax && canMove)
+        {
+            if(transform.position.x > 0)
+            {
+                rb.velocity = new Vector2(2f * -1, vel);
+
+                canMove = false;
+
+            }
+            else
+            {
+                rb.velocity = new Vector2(-2f * -1, vel);
+
+                canMove = false;
+            }
+        }
+
     }
 
     private void Shooting()

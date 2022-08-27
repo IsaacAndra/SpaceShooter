@@ -172,7 +172,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.014449179, y: -0.24924833}
@@ -194,7 +194,9 @@ MonoBehaviour:
   life: 1
   explosion: {fileID: 1927940140672099586, guid: ce7aec015a65aaa48ae91fd0fa98eb34, type: 3}
   shot: {fileID: 6686209210770660944, guid: 2dbfe59c82ce2ae48a4f156e7baac80c, type: 3}
+  velocityShot: 5
   shotPosition: {fileID: 6260922626037304816}
+  yMax: 2.5
 --- !u!1 &5059797420715323737
 GameObject:
   m_ObjectHideFlags: 0
