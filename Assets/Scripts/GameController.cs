@@ -6,11 +6,14 @@ public class GameController : MonoBehaviour
 {
     [SerializeField] private GameObject[] enemies;
 
-    private int score = 0;
+    [SerializeField] private int score = 0;
     [SerializeField] private int level = 1;
+    [SerializeField] private int levelBase = 100;
 
     private float waitEnemies = 0f;
     [SerializeField] private float timeWait = 5f;
+
+    [SerializeField] private int qtdEnemies = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -24,10 +27,26 @@ public class GameController : MonoBehaviour
         EnemyGenerate();
     }
 
+    public void GetScore(int score)
+    {
+        this.score += score;
+
+        if(this.score > levelBase * level)
+        {
+            level++;
+        }
+    }
+
+    public void DiminuiQuantidade()
+    {
+        qtdEnemies--;
+    }
+
+
     private void EnemyGenerate()
     {
 
-        if(waitEnemies > 0f)
+        if(waitEnemies > 0f && qtdEnemies <=0)
         {
             waitEnemies -= Time.deltaTime;
         }
@@ -36,7 +55,6 @@ public class GameController : MonoBehaviour
         {
 
             int quantidade = level * 2;
-            int qtdEnemies = 0;
 
             while (qtdEnemies < quantidade)
             {
@@ -56,7 +74,6 @@ public class GameController : MonoBehaviour
                 Vector3 position = new Vector3(Random.Range(-8f, 8f), Random.Range(6f, 17f), 0f);
                 Instantiate(createdEnemy, position, transform.rotation);
                 qtdEnemies++;
-                Debug.Log(position.y);
 
                 waitEnemies = timeWait;
             }

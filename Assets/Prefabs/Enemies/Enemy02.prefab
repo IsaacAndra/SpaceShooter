@@ -190,11 +190,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58e61e5136d97894a9d2704e944da111, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vel: -2
+  vel: -1
   life: 1
   explosion: {fileID: 1927940140672099586, guid: ce7aec015a65aaa48ae91fd0fa98eb34, type: 3}
   shot: {fileID: 6686209210770660944, guid: 2dbfe59c82ce2ae48a4f156e7baac80c, type: 3}
   velocityShot: 5
+  scores: 25
   shotPosition: {fileID: 6260922626037304816}
   yMax: 2.5
 --- !u!1 &5059797420715323737

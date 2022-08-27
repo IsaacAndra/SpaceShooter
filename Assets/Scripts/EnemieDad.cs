@@ -10,6 +10,7 @@ public class EnemieDad : MonoBehaviour
     [SerializeField] protected GameObject explosion;
     [SerializeField] protected GameObject shot;
     [SerializeField] protected float velocityShot = 5f;
+    [SerializeField] protected int scores = 10;
     protected float delayShot = 1f;
 
 
@@ -36,6 +37,11 @@ public class EnemieDad : MonoBehaviour
             Destroy(gameObject);
 
             Instantiate(explosion, transform.position, transform.rotation);
+
+            var gerador = FindObjectOfType<GameController>();
+            gerador.DiminuiQuantidade();
+            gerador.GetScore(scores);
+
         }
 
 
@@ -47,6 +53,8 @@ public class EnemieDad : MonoBehaviour
         if(other.CompareTag("Destroyer"))
         {
             Destroy(gameObject);
+            var gerador = FindObjectOfType<GameController>();
+            gerador.DiminuiQuantidade();
         }
     }
 
@@ -55,6 +63,8 @@ public class EnemieDad : MonoBehaviour
         if(other.gameObject.CompareTag("Player1"))
         {
             Destroy(gameObject);
+            var gerador = FindObjectOfType<GameController>();
+            gerador.DiminuiQuantidade();
 
             Instantiate(explosion, transform.position, transform.rotation);
 

@@ -11,6 +11,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform shotPosition;
     [SerializeField] private float life = 3f;
 
+    [SerializeField] private float xMin;
+    [SerializeField] private float xMax;
+    [SerializeField] private float yMin;
+    [SerializeField] private float yMax;
+
     [SerializeField] private float velShot = 10f;
 
     // Start is called before the first frame update
@@ -44,6 +49,13 @@ public class PlayerController : MonoBehaviour
         var myVelocity = new Vector2(horizontal, vertical);
         myVelocity.Normalize();
         rb.velocity = myVelocity * velocity;
+
+        float myX = Mathf.Clamp(transform.position.x, xMin, xMax);
+        float myY = Mathf.Clamp(transform.position.y, yMin, yMax);
+
+        transform.position = new Vector3(myX, myY, transform.position.z);
+
+
     }
 
     public void LostLife(float damage)
