@@ -31,7 +31,7 @@ public class EnemieDad : MonoBehaviour
     {
         life -= damage;
 
-        if(life <= 0)
+        if(life <= 0 && transform.position.y < 5f)
         {
             Destroy(gameObject);
 
